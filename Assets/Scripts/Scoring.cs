@@ -29,7 +29,7 @@ public class Scoring : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("Wall"))
         {
-            scoreManager.SendMessage("CalculateFinalScore");
+            scoreManager.GetComponent<WinOrLose>().GameHasEnded("lose", GetComponent<Health>().health);
         }
     }
 }

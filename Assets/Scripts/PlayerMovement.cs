@@ -27,16 +27,9 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
-
-
-        
+   
         cameraGO.GetComponent<Camera>().fieldOfView = 60 + rb.velocity.z;
 
-
-
-
-
-        Debug.Log(timer);
         if(timer > 0)
         {
             timer -= Time.deltaTime;
@@ -45,9 +38,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyDown("space") && timer <= 0)
         {
             rb.AddForce(Vector3.up * jumpForce);
-            Debug.Log("I jumped");
             timer = 3;
-
         }
     }
 
