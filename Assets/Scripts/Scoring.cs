@@ -1,35 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Scoring : MonoBehaviour {
+public class Scoring : MonoBehaviour
+{
 
     public GameObject scoreManager;
+    public GameObject wall;
+    public AudioClip winTheme;
+    public AudioClip collect;
+    AudioSource audioS;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void Start()
+    {
+        audioS = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Points"))
+        if (other.gameObject.CompareTag("Points"))
         {
             scoreManager.SendMessage("RecieveScore", 20f);
+            GetComponent<AudioSource>().PlayOneShot(collect, 1);
             Destroy(other.gameObject);
         }
-            
-    }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Coin"))
         {
-            scoreManager.GetComponent<WinOrLose>().GameHasEnded("lose", GetComponent<Health>().health);
+            GetComponent<AudioSource>().PlayOneShot(winTheme, 1);
+            scoreManager.GetComponent<WinOrLose>().GameHasEnded("win", GetComponent<Health>().health);
+            Destroy(other.gameObject);
         }
     }
 }
+

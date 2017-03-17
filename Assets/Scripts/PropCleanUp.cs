@@ -9,11 +9,6 @@ public class PropCleanUp : MonoBehaviour {
         self = this.gameObject;
         Invoke("Destroy", 5);
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
 
     void Destroy()
     {

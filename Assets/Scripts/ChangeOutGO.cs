@@ -5,7 +5,7 @@ public class ChangeOutGO : MonoBehaviour {
 
     public GameObject breakableGo;
     public GameObject player;
-
+    public AudioClip crash;
     public GameObject points;
 
 
@@ -25,7 +25,7 @@ public class ChangeOutGO : MonoBehaviour {
     {
         if (other.gameObject == player)
         {
-           
+            
 
             Instantiate(breakableGo, transform.position, transform.rotation);
             

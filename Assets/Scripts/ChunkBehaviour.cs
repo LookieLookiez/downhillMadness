@@ -6,16 +6,11 @@ public class ChunkBehaviour : MonoBehaviour {
     public Transform[] propTransforms;
     public GameObject[] props;
 
-	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+        Debug.Log("im still working");
         PropPlacement();
-
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     void PropPlacement()
     {
@@ -28,14 +23,7 @@ public class ChunkBehaviour : MonoBehaviour {
             {
                 Vector3 newPos = new Vector3(pos.position.x, pos.position.y, pos.position.z);
                 Instantiate(props[Random.Range(0, props.Length)], newPos, Quaternion.identity);
-            }
-            
+            }   
         }
-
-        // int numOfTransforms = propTransforms.Length;
-        // for (int i = 0; i < numOfTransforms; i++)
-        // {
-        //     Instantiate(props[Random.Range(0, props.Length)], newChunk, Quaternion.identity);
-        // }
     }
 }

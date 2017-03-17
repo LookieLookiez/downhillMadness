@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     //WLS is WinLoseScreen
-
     public Text titleWLS;
 
     public Text scoreText;
@@ -51,10 +50,6 @@ public class ScoreManager : MonoBehaviour {
         //Display int to string
         scoreText.text = score.ToString();
         scoreTextWLS.text = score.ToString();
-
-
-        //Save prefs
-        //PlayerPrefs.Save();
     }
 
     void DidIWinOrLose(string title)

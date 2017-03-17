@@ -9,15 +9,10 @@ public class SceneManagerScript : MonoBehaviour {
     public Scene level2;
     public Scene level3;
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void ChangeSceneFromMenu(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 
     public void ChangeScene(int WhichIdentifier)
     {
@@ -35,7 +30,11 @@ public class SceneManagerScript : MonoBehaviour {
         if (WhichIdentifier == 2)
             chosenLoad = SceneManager.GetActiveScene().buildIndex + 1;
 
-
         SceneManager.LoadScene(chosenLoad);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
